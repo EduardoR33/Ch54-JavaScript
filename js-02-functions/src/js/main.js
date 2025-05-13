@@ -45,8 +45,9 @@ o funciones se eleven al comienzo de su ámbito antes de que se ejecute el códi
 
 */
 
-
-
+function saludar( nombre ) {
+  console.log("Qué te gustaría de regalod e cumpleaños " + nombre );
+}
 
 
 /*
@@ -64,7 +65,30 @@ sintaxis:
 */
 
 
+const darRegalo = function (nombre, regalo){
+  console.log( `Felicidades ${nombre}, te traje ${regalo}`);
+};
 
+darRegalo("Jen", "Sopa Nissin con camaron");
+
+/*
+ Realizar una función declarada que sume dos números 
+ y retorne el resultado.
+ 
+ Realizar una función expresada que reste dos números 
+ y retorne el resultado.
+ 
+*/
+
+function sumaDos( numero, numero2 ) {
+  const resultado = (numero + numero2);
+  return console.log(`Tu suma es ${numero} + ${numero2} = ${resultado}`)
+}
+
+function restaDos( numero, numero2 ) {
+  const resultado = (numero - numero2);
+  return console.log(`Tu suma es ${numero} + ${numero2} = ${resultado}`)
+}
 
 
 /*
