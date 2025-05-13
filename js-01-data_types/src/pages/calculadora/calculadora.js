@@ -12,5 +12,12 @@ Resultado esperado:
  Si el usuario ingresa 25 y presiona el botón, se muestra:
  Tu edad en meses es: 300
 
-const edad = document.getElementbyId()
+const edad = document.getElementbyId('birthday').value
 */
+function calculaTuEdad{
+    const
+}
+
+ 
+const
+
