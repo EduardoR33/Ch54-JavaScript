@@ -47,6 +47,16 @@ let valor2 = 4;
 console.log("El resultado de " + valor1 + " * " + valor2 + " = " + valor1 * valor2 + " pesos.");
 console.log(`El resultado de ${valor1} * ${valor2} = ${valor1*valor2} pesos.`);
 
+let nombre= ("Jenifer");
+let regalo= ("Bicicleta");
+console.log(`El nombre del festejado es ${nombre} y mi regalo es  una ${regalo}`);
+
+/* 
+ Crear una variable con el nombre de la persona que cumple años.
+ Crear una variable con el regalo que le darás.
+ Mostrar en consola el mensaje que incluya el nombre de las persona y el regalo.
+*/
+
 /*
  Tipos de datos number.
 
@@ -68,6 +78,12 @@ console.log( typeof ( 3 + "Viernes temático" ) ); // 'string'
 console.log( typeof ( "3Viernes temático" ) ); // 'string'
 console.log( 4 / 0 ); // +Infinity
 
+/* Comprueba si las siguientes variables son del tipo number*/
+const num1 = 42;
+/* Comprueba si las siguientes variables son del tipo string*/
+const nameCh54 = "Luis";
+console.log( typeof num1 === "number");
+console.log( typeof nameCh54 === "string");
 
 /*
  Cuando se realizan operaciones que exceden los límites
@@ -163,7 +179,7 @@ const edadMascotaString = String( edadMascota );
 console.log(`Mi mascota tiene ${ edadMascotaString } años`);
 console.log(`Mi mascota tiene ${ edadMascota } años`);
 console.log( String( true ) ); // "true"
-console.log( String( null ) ); // 
+console.log( String( null ) ); // "null"
 console.log( String( undefined ) ); // "undefined"
 console.log( String( [] ) ); // empty Array-> ""
 console.log( String( [2,3,4,5,null,3] ) ); // "2,3,4,5,,3"
