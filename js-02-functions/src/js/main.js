@@ -101,7 +101,10 @@ sintaxis:
 
 */
 
-
+(function setUp () {
+  console.log("Configuracion inicial de la aplicación")
+})();
+//setUp();
 
 
 
@@ -122,11 +125,49 @@ sintaxis:
     }
 */
 
+// Realizar una función declarada que calcule al área de un triángulo
+// al función debe retornar el resultado.
 
+console.log(`El área del triángulo es: ${area(5, 10)}`);
+function area(a, b) {
+  return (a * b) / 2;
+}
 
+const calculaArea2 = function (base, altura) {
+  return (base*altura)/2;
+}
+console.log(calculaArea2(12, 20));
 
+//nuevoejercicio
+const calcularArea3 = (base, altura) => base * altura / 2;
+console.log(`Resultado usando arrow function: ${calculaArea3(12,20)}`)
 
+// ¿Qué sucede si uso console.log como retorno?
+const imprimirArea = (base, altura) => console.log(calculaArea3(base, altura));
 
+console.log(imprimirArea(12, 20));
+
+function imprimirEnConsola( consola ) {
+  console.log(mensaje);
+}
+
+// Realizar una función flecha que calcule el área de un círculo
+// Área = pi * radio^2
+// Usar una función flecha para imprimir el resultado en un párrafo id="area-circulo"
+
+const calcularAreaCirculo = (radio) => Math.PI * Math.pow(radio, 2);
+const imprimirAreaCirculo1 = (area) => {
+  const parrafo = document.getElementById("area-circulo");
+
+};
+const radio = 5;
+const area = calcularAreaCirculo(radio);
+imprimirAreaCirculo1(area);
+
+const circleArea = (radio) => Math.PI * radio ** 2;
+const imprimirAreaCirculo = (radio) =>
+  document.getElementById("area-circulo").innerText = circleArea(radio);
+imprimirAreaCirculo(5);
 
 /*
  ------------ Parámetros por defecto -----------------------
@@ -134,6 +175,8 @@ sintaxis:
 Inicializa un parámetro de la función, si no se envía el argumento cuando se invoca
 
 */
+
+
 
 
 
