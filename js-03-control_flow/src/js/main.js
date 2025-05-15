@@ -74,6 +74,41 @@ const tuLuchador = edad => {
 
 console.log(tuLuchador(16));
 
+//BLOQUE DE CODIGO
+
+{
+    let myVarLet = 30;
+    const myVarConst = 40;
+    var myVarVar = 50;
+    console.log(myVarLet, myVarConst, myVarVar); // 30,40,50
+    
+    {
+        let myVarLet = 100;
+        const myVarConst = 110;
+        var myVarVar = 120;
+        console.log(myVarLet, myVarConst, myVarVar); // 100,110,120
+    }
+    console.log(myVarLet, myVarConst, myVarVar);// 30,40,120
+}
+
+// Ejercicios mentales
+let active = false
+if( active === true ); {
+  console.log("Está activo")
+}
+console.log("Fin del programa");
+// --------------Ejercicio 2-----------------
+active = false;
+if( active )
+  console.log("Está activo");
+  console.log("Tiene autorización");
+console.log("Fin del programa");
+// --------------Ejercicio 3-----------------
+active = false;
+if( active ); console.log("Está activo");
+//else console.log("No está activo"); // Unexpected token 'else'
+// console.log("Fin del programa");
+
 //--------------- Condicional Switch --------------------------
 /*
  La condicional Switch evalua una expresión y se compara
@@ -102,7 +137,19 @@ console.log(tuLuchador(16));
 
 */
 
-
+const evaluarNombre = ( nombre ) => {
+    let resultado;
+    switch ( nombre){
+        case "Lua":
+            resultado = "Es de Abril";
+            break;
+        default:
+            resultado ="No se sabe de quién es";
+        
+    }
+    return resultado;
+}
+console.log( evaluarNombre("Lua") ); // Es de Abril
 
 
 /**
