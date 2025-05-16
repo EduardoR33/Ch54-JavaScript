@@ -143,13 +143,26 @@ const evaluarNombre = ( nombre ) => {
         case "Lua":
             resultado = "Es de Abril";
             break;
+        case "Borrego": 
+        case "Besito":
+        case "Fijól":
+        case "Paco":
+            resultado = "Es de Yessica";
+            break;
+        case "Milo":
+            resultado = "Es de Carlos";
+            break
+        case "Cuchara":
+            resultado = "Es de Ricardo";
+            break;
         default:
-            resultado ="No se sabe de quién es";
-        
+            resultado ="No se sabe de quién es";        
     }
     return resultado;
 }
 console.log( evaluarNombre("Lua") ); // Es de Abril
+console.log( evaluarNombre("Milo") ); // Es de Carlos
+console.log( evaluarNombre("Borrego") ); // Es de Jessica
 
 
 /**
@@ -165,7 +178,21 @@ console.log( evaluarNombre("Lua") ); // Es de Abril
  */
 
 
+/**
+ * Función que reciba la velocidad de un ventilador y devuelva el mensaje
+ * de la velocidad del ventilador en:
+ * Velocidad 0: Apagado
+ * Velocidad 1: Baja
+ * Velocidad 2: Media
+ * Velocidad 3: Alta
+ * Cualquier otro valor: Velocidad desconocida
+ * @param {number} velocidad
+ * @returns {string} mensaje
+ * 
+ * Realizar dos versiones, una versión con switch y otra con if-else
+ */
 
+//Agregar ejercisio
 
 // ------------------------ Operador ternario --------------------------
 /*
@@ -177,8 +204,67 @@ console.log( evaluarNombre("Lua") ); // Es de Abril
 
 */
 
+/*const verficarPagoDeTarjeta = ( estaPagado ) =>{
+    let msj;
+    if( estaPagado) {
+        msj = "La tarjta ha sido pagada";
+    } else {
+        msj = "La tarjeta no ha sido pagada";
+    }
+    return msj;
+}
+console.log( verficarPagoDeTarjeta( true ) );
+console.log( verficarPagoDeTarjeta( false ) );
+*/
+const verficarPagoDeTarjetaUsandoTernario = ( estaPagado ) =>{
+    return estaPagado ? "La tarjeta ha sido pagada" : "La tarjeta no ha sido pagada";
+}
+console.log( verficarPagoDeTarjetaUsandoTernario( true ) ); // "La tarjta ha sido pagada"
+console.log( verficarPagoDeTarjetaUsandoTernario( false ) ); // "La tarjeta no ha sido pagada"
 
+/*
+ Dado un número entero, imprimir:
+ "Negativo":  si el número es menor a 0.
+ "Cero":  si el número es  0.
+ "Positivo":  si el número es mayor a cero pero menor a 100.
+ "Grande": si el número es mayor o igual a 100.
+ - Realizar una función que reciba el número y retorne el mensaje.
+ - El retorno debe ser impreso en la consola.
+ - Realizar una versión if-else, switch y operador ternario.
+*/
 
+const clasificarNumero = ( numero ) => {
+    if (numero < 0) return "Negativo"
+    else if (numero === 0) return "Cero"
+    else if (numero > 0 && numero < 100) return "Positivo"
+    else  return "Positivo Grande"
+
+}
+
+console.log(clasificarNumero(0));
+
+const clasificarNumeroSwitch = (numero) => {
+  switch (true) {
+    case (numero < 0):
+      return "negativo";
+    case (numero === 0):
+      return "cero";
+    case (numero > 0 && numero < 100):
+      return "positivo";
+    case (numero >= 100):
+      return "positivo grande";
+  }
+};
+
+console.log(clasificarNumeroSwitch(100));
+
+const clasificarNumeroTernario = (numero) =>
+  numero < 0 ? "negativo" :
+  numero === 0 ? "cero" :
+  numero < 100 ? "positivo" :
+  "positivo grande";
+
+console.log(clasificarNumeroTernario(-8));
 
 /**
  *  Función que reciba la edad de una persona y devuelva el mensaje:
@@ -187,9 +273,6 @@ console.log( evaluarNombre("Lua") ); // Es de Abril
  *  @param {number} edad
  *  @returns {string} mensaje
  */
-
-
-
 
 // ------------------- Ejercicio Estaciones del año --------------------------
 /*
