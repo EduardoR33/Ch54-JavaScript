@@ -54,7 +54,47 @@ for ( const color of colores ) {
 const cantantes = ["Juan Gabriel", "José José", "Rocío Dúrcal", "Ana Gabriel"];
 const refListaCantantes = document.getElementById("cantantes-lista");
 
+// Imprimir en consola cada uno de los cantantes, usandor for of
+// La salida deber ser como "Juan Gabriel - José José - Rocío Dúrcal - Ana Gabriel -"
 
+/*const imprimirCantantes2 = ( listaCantantes ) => {
+    let cantantesConcatenados = "";
+    for (const cantante of listaCantantes) {
+        // cantantesConcatenados = cantantesConcatenados + cantante + " - ";
+        cantantesConcatenados +=  cantante + " - ";
+    }
+    return cantantesConcatenados;
+}
+console.log(imprimirCantantes2(cantantes));
+
+const imprimirCantantes = ( listaCantantes ) => {
+    for (const cantante of listaCantantes) {
+        console.log(cantante);
+    }
+}
+imprimirCantantes(cantantes); */
+
+/**
+ *  Del siguiente arreglo de cantantes, mostrar en el DOM, el listado como unorder list.
+ *  const cantantes = ["Juan Gabriel", "José José", "Rocío Dúrcal", "Ana Gabriel"];
+ *  - Usar for of
+ *  - De preferencia usar una función 
+ *    <li>Juan Gabriel</li>
+ */
+
+const cantantes1 = ["Brandon Flowers", "Bon Jovi", "Lady GaGa", "No ubico a otro"];
+
+function imprimirCantantes(lista) {
+  const ul = document.getElementById("cantantes-lista");
+
+  for (const cantante of lista) {
+    const li = document.createElement("li");
+    li.textContent = cantante;
+    ul.appendChild(li);
+  }
+}
+
+imprimirCantantes(cantantes1);
 
 // ------------------- Uso de break en ciclos ----------------------------
 // break detiene la ejecución de la iteración en curso y termina el ciclo.
@@ -118,5 +158,96 @@ for (let i = 0 ; i <= 5; i++ ){
     }
 
 */
+/* 
+ Uso de Math.random();
+ Generar 5 números aleatorios.
+ Los números deben estar entre el 0.0 y 10.0(sin incluir 10.0)
+*/
 
+/*const generarNumerosAleatorios = (cantidad) => {
+    let numerosAleatorios = [];
+    for (let i = 0; i < cantidad; i++) {
+        const numeroAleatorio = Math.random() * 10;
+        numerosAleatorios.push(numeroAleatorio);
+    }
+    return numerosAleatorios;
+};*/
 
+/*const generarNumerosAleatorios = (cantidad) => {
+   
+    for (let i = 0; i < cantidad; i++) {
+        const numeroAleatorio = Math.random() * 10;
+        console.log("Número aleatorio: ", numeroAleatorio); // 0.0...10.0
+    }
+    return numerosAleatorios;
+};
+generarNumerosAleatorios(5);
+
+const generarNumerosAleatorios2 = (cantidad, minNum = 0, maxNum = 10) => {
+   
+    for (let i = 0; i < cantidad; i++) {
+        const numeroAleatorio = Math.random();
+        const  escalarNumero = numeroAleatorio * (maxNum + 1);
+        const  numeroEntero = Math.floor(escalarNumero);
+        console.log("Número aleatorio: ", numeroAleatorio); // 0.0...10.0
+    }
+};
+generarNumerosAleatorios2(5);*/
+
+const generarNumerosAleatorios2 = (cantidad, minNum = 0, maxNum = 10) => {
+   
+    for (let i = 0; i < cantidad; i++) {
+        const numeroAleatorio = Math.random(); 
+        const escalarNumero = numeroAleatorio * ( (maxNum - minNum ) + 1); 
+        const numerosEntero = Math.floor(escalarNumero + minNum); 
+        console.log(`Número aleatorio entre ${minNum} y ${maxNum} :  ${numerosEntero}`);
+    }
+   
+};
+generarNumerosAleatorios2(5);
+generarNumerosAleatorios2(10, 50 , 60);
+
+/*
+      Melate Chocolate
+      1.- Al puldar el botón Generar mis número de la suerte.
+      1. Generar 6 números aleatorios entre el 1 y el 54.
+      2.- Mostrar el resultado en el DOM.
+*/
+
+/**
+ * Generar un número aleatorio entre un rango de números
+ * @param {number} minNum 
+ * @param {number} maxNum 
+ */
+const generarNumeroAleatorio = (minNum, maxNum) => {
+    const numeroAleatorio = Math.random();
+    const escalarNumero = numeroAleatorio * ( (maxNum - minNum ) + 1);
+    const numeroEntero = Math.floor(escalarNumero + minNum);
+    return numeroEntero;
+};
+
+const elNumeroExisteEnArreglo = (arreglo, numero) => {
+    for (const elemento of arreglo){
+        if( elemento === numero) return true
+    }
+    return false;
+}
+
+const imprimirMelateChocolate = ( numeros ) => {
+    const referencia = document.getElementById("melate-chocolate");
+    referencia.innerHTML = ` ${numeros.join(' - ')} `;
+}
+const generarNumerosDeLaSuerte = (size = 6, minNum = 1, maxNum = 54) => {
+    const numeros = [];
+    while( numeros.length < size ){
+        const numAleatorio = generarNumeroAleatorio(minNum, maxNum);
+        if( elNumeroExisteEnArreglo(numeros, numAleatorio) === false ){
+            numeros.push(numAleatorio);
+        }
+        
+        console.log(iteracion, numeros, numAleatorio);
+        iteracion++;
+    }
+    imprimirMelateChocolate( numeros);
+    
+}
