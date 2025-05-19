@@ -227,10 +227,11 @@ const generarNumeroAleatorio = (minNum, maxNum) => {
 };
 
 const elNumeroExisteEnArreglo = (arreglo, numero) => {
-    for (const elemento of arreglo){
+    /*for (const elemento of arreglo){
         if( elemento === numero) return true
     }
-    return false;
+    return false;*/
+    return arreglo.includes(numero);
 }
 
 const imprimirMelateChocolate = ( numeros ) => {
@@ -251,3 +252,23 @@ const generarNumerosDeLaSuerte = (size = 6, minNum = 1, maxNum = 54) => {
     imprimirMelateChocolate( numeros);
     
 }
+
+const numerosIniciales = [ 5, 38, 100, 4, 2, 7, 6 ];
+const ordenarNumeros = ( numerosDesordenados )=> {
+
+    const comparaNumeros = ( a, b ) => {
+    if ( a < b ) return -1;
+    if ( a > b ) return 1;
+    return 0;
+}
+
+const ordenarNumeros = ( numerosDesordenados, fncCallBack )=>{
+    const numerosOrdenados = numerosDesordenados;
+    numerosOrdenados.sort( fncCallBack );
+    return numerosOrdenados;
+}
+}
+console.log( numerosIniciales );
+console.log( ordenarNumeros(numerosIniciales, comparaNumeros) );
+
+   
