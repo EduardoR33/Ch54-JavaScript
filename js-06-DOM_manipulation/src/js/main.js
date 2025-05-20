@@ -41,6 +41,21 @@ const changeElementById = () =>{
 
 changeElementById();
 
+/*
+ Modificar el parragraph de la línea 44 a 49 del html
+ Mostrar una tarjeta de bootstrao con el titulo "<Mi nombre>"
+ - Crear una nueva función que inserte la tarjeta.
+ - Invotar la función para que se ejecute.
+*/
+
+const cambioTarjeta = () =>{
+    const tarjetaInsertada = document.getElementById("tarjet-mia");
+    console.log( tarjetaInsertada );
+    tarjetaInsertada.innerHTML = '<span class="text-warning">Tarjeta</span>: Esta es una Tarjeta integrada en el html.';
+}
+
+cambioTarjeta();
+
 /**
  * Modificar elementos por su tag(etiqueta HTML)
  */
@@ -53,6 +68,21 @@ const changeElementsByTagName =  () => {
    }
 
 }
+
+/*
+-Realizar una funcion que lea todos los botones de lapagina y m
+muestre en la consola el numero total de botones ejecutandose
+*/
+const contadorBotones = () => {
+    const listaBotones = document.getElementsByTagName("button");
+    console.log( listaBotones );
+
+    for( let item of listItems2){
+        item.innerText = "Listado de Buttons"
+    }
+}
+
+contadorBotones();
 
 // changeElementsByTagName();
 
