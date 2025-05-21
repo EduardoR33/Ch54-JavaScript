@@ -60,6 +60,8 @@ Características clave de los módulos JS:
     return a + b;
   }
 
+export { PI, sumar };// exportacion nombrada
+
   También puedes exportar por defecto (solo uno por módulo):
   export default function saludar(nombre) {
     return `¡Hola, ${nombre}!`;
@@ -78,8 +80,11 @@ Características clave de los módulos JS:
 
 
 // importa las funciones del footer y header e invócalos para que se ejecuten
+import { insertMainHeader } from "../modules/header/header.js"
+import { insertMainFooter } from "../modules/footer/footer.js";
 
-
+insertMainHeader( document.getElementById( "header" ) );
+insertMainFooter( document.getElementById( "footer" ) );
 
 /*
   Uso del local Storage.
@@ -101,7 +106,32 @@ Características clave de los módulos JS:
 */
 
 
+/*
+ Crear en el HTML un input y un botón para guardar el valor en el localStorage.
+  
+  Al cargar la página, si hay un valor guardado, mostrarlo en el titulo H1 "Hola, {nombre}".
+  En caso contrario, mostrar "Hola, persona invitada".
+*/
 
+const leerNombreDelLocalStorge = () => {
+  const nombre = localStorage.getItem( "nombre" ) || "Persona invitada";
+  return nombre;
+}
+
+const insertarNombreEnElDOM = () => {
+  const refH1 = document.querySelector("#Bienvenida");
+  const nombre  = leerNombreDelLocalStorge();
+  refH1.textContent =  `Hola, ${nombre}`;
+
+}
+
+insertarNombreEnElDOM();
+
+const manejoDelBotonGuardar = () => {
+  const refInput = document.querySelector("#nombreInput");
+  const newName = refInput.value;
+  newName && localStorage.setItem("nombre", newName);
+}
 
 /*
   Programación síncrona.
@@ -112,9 +142,9 @@ Características clave de los módulos JS:
 
 */
 
-const primerPaso = () => {
+function primerPaso() {
   console.log("01 - Inicio de mi programa");
-};
+}
 
 const segundoPaso = () => {
   console.log("02 - Desarrollo de mi programa");

@@ -31,3 +31,6 @@ const insertMainHeader = ( header )=>{
 
 }
 
+const myVar = "CH54";
+
+export { insertMainHeader, myVar };

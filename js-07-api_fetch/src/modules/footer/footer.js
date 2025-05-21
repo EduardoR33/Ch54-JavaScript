@@ -9,3 +9,6 @@ const insertMainFooter = ( footer )=>{
 
 }
 
+const myVariable = "Ch5";
+
+export { insertMainFooter, myVariable};
