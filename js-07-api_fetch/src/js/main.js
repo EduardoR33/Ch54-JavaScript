@@ -133,6 +133,23 @@ const manejoDelBotonGuardar = () => {
   newName && localStorage.setItem("nombre", newName);
 }
 
+//NO LO DEVEMOS DE HACER
+//window.aLlamadaBotonGuardar = manejoDelBotonGuardar;
+
+/**
+ *  ¿Qué es addEventListener?
+ *  Es un método que permite escuchar eventos (como click, keydown, submit, etc.) en un elemento 
+ *  del DOM, y ejecutar una función cuando ese evento ocurre.
+ * 
+ * */
+const refSaveButton = document.getElementById("btnGuardar");
+refSaveButton.addEventListener( "click", manejoDelBotonGuardar  );
+
+const refNameInput = document.getElementById("nombreInput");
+refNameInput.addEventListener( "keydown" , ( event )=>{
+  console.log(event.key);
+});
+
 /*
   Programación síncrona.
  
@@ -183,6 +200,16 @@ tercerPaso();
 
 */
 
+const saludar = (nombre, nombreCohorte54, cohorte)=> alert(`Hola ${nombre} de la ${cohorte}`);
+
+const saludarTranscurridoXSeg = ( milisegundos ) =>{
+  setTimeout (saludar, milisegundos, "Neo", "Cris" );
+
+}
+
+console.log("Antes de saludar");
+saludarTranscurridoXSeg( 5000 );
+console.log("Despues de saludar");
 
 
 
